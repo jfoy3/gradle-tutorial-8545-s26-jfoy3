@@ -41,3 +41,9 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.register<Copy>("copyTask") {
+    from("source")
+    into("target")
+    include("*.war")
+}
