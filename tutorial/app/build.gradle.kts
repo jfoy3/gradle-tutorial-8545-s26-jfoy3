@@ -49,3 +49,15 @@ tasks.register<Copy>("copyTask") {
     into("target")
     include("*.war")
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.gradle.tutorial"
+            artifactId = "tutorial"
+            version = "1.0"
+
+            from(components["java"])
+        }
+    }
+}
